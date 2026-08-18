@@ -1,23 +1,24 @@
 {% set name = "robomimic" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/robomimic-{{ version }}.tar.gz
-  sha256: b60c1a196469f898a807258ea7943adcb52c6521777abae7fccf92b509f6490a
+  url: https://github.com/ARISE-Initiative/robomimic/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 1a7497f6bda84aea378858e23bb19ad9e91748fdda6596373223789bc3b9a984
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
     - numpy >=1.13.3
@@ -33,6 +34,7 @@ requirements:
     - egl-probe >=1.0.1
     - pytorch
     - torchvision
+    - huggingface_hub
 
 test:
   imports:
@@ -52,3 +54,4 @@ about:
 extra:
   recipe-maintainers:
     - traversaro
+    - diegoferigo
