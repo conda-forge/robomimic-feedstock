@@ -1,5 +1,5 @@
 {% set name = "robomimic" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ARISE-Initiative/robomimic/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 1a7497f6bda84aea378858e23bb19ad9e91748fdda6596373223789bc3b9a984
+  sha256: 7377276b6b9fb12e211974f386faecb8e1a4838a07a157e4d50a00b621a458a4
 
 build:
   noarch: python
